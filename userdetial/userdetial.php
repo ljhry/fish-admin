@@ -15,6 +15,9 @@
   <link type="text/css" rel="stylesheet" href="../css/H-ui.css" />
   <link type="text/css" rel="stylesheet" href="../css/H-ui.admin.css" />
   <link type="text/css" rel="stylesheet" href="../font/font-awesome.min.css" />
+  <!--[if IE 7]>
+<link href="font/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
   <title>科目管理</title>
 </head>
 
