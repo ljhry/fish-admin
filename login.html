@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>云水族</title>
+<link rel="stylesheet" href="css/login.css" type="text/css" />
+<link type="text/css" rel="stylesheet" href="font/font-awesome.min.css"/>
+<style>
+    .loginboxinner {
+    padding: 20px;
+    background: #e1e3e7 url(../images/patternbg.png);
+    -moz-border-radius: 0 2px 2px 0;
+    -webkit-border-radius: 0 0 2px 2px;
+    border-radius: 0 0 2px 2px;
+}
+    /* img{
+        box-shadow: 3px 3px 8px #888;
+        border-radius: 35%
+    } */
+</style>
+</head>
+
+<body class="loginpage">
+	<div class="loginbox">
+    	<div class="loginboxinner">
+        	
+            <div class="logo">
+            	<h1 class="logo">云水族箱.<span>后台系统</span></h1>
+            </div>
+            <div class="logo">
+                <img src="images/logo透明.png" alt="" width="100px">
+            </div>
+            
+            <form id="login" action="public/php/check.php" method="post">
+            	
+                <div class="username">
+                	<div class="usernameinner">
+                    	<input type="text" name="username" id="username" placeholder="用户名" />
+                    </div>
+                </div>
+                
+                <div class="password">
+                	<div class="passwordinner">
+                    	<input type="password" name="password" id="password" placeholder="密码" />
+                    </div>
+                </div>
+                
+                <button>登录</button>
+                
+                <div class="keep"><input type="checkbox" /> 记住密码</div>
+            
+            </form>
+            
+        </div><!--loginboxinner-->
+    </div><!--loginbox-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+</body>
+
+</html>
