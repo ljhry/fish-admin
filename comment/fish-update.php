@@ -1,8 +1,3 @@
-<style>
-    h2{
-        color:#888;
-    }
-</style>
 <?php
     include '../public/php/config.php';
 
@@ -26,16 +21,16 @@
                 
             }            
             $img=basename($dst);
-            $sql1="update fishtank set name='{$fishname}',img='{$img}' where id={$id}";
+            $sql1="update fish set name='{$fishname}',img='{$img}' where id={$id}";
             if(mysqli_query($conn,$sql1)){
-            echo "<center><h2>修改成功-图片修改成功</h2></center>";
+            echo "修改成功-图片修改成功";
             }
         }
 
     }else{
-        $sql2="update fishtank set name='{$fishname}' where id={$id}";
+        $sql2="update fish set name='{$fishname}' where id={$id}";
         if(mysqli_query($conn,$sql2)){
-            echo "<center><h2>修改成功-无修改图片<h2></center>";
+            echo "修改成功-无修改图片";
             
         }else{
             

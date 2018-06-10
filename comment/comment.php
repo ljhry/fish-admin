@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+﻿<!-- <!DOCTYPE HTML>
 <html>
 
 <head>
@@ -16,7 +16,7 @@
 <body>
   <nav class="Hui-breadcrumb">
     <i class="icon-home"></i> 首页
-    <span class="c-gray en">&gt;</span> 用户详情管理
+    <span class="c-gray en">&gt;</span> 用户评论
     <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
       title="刷新">
       <i class="icon-refresh"></i>
@@ -27,23 +27,27 @@
       <form class="Huiform" action="/" method="post">
         <input type="hidden" id="hid_ccid" value="">
         <input class="input-text" style="width:250px" type="text" value="" placeholder="搜索" id="article-class-val">
-        <a href='javascript:;' class="btn btn-success" id="" name="" onClick="user_edit( '4', '550', '', '修改','fishtank-edit.php')" class='ml-5' style='text-decoration:none'>
+        <a href='javascript:;' class="btn btn-success" id="" name="" onClick="user_edit( '4', '550', '', '修改','fish-edit.php')" class='ml-5' style='text-decoration:none'>
           <i class="icon-search"></i> 搜索</a>
       </form>
     </div>
     <div class="cl pd-5 bg-1 bk-gray mt-20">
+      <span class="l">
+        <a href="javascript:;" onClick="user_add('550','','添加鱼','fish-add.html')" class="btn btn-primary radius">
+          <i class="icon-plus"></i> 添加品种</a>
+      </span>
       <?php
         $conn = mysqli_connect("localhost","root","12345678","myfishtank");
         if(!$conn){
           die("连接错误".mysqli_connect_error());
         }
-        $sql = "select count(*) from userdet group by id";
+        $sql = "select count(*) from fish group by id";
         
         $rst = mysqli_query($conn,$sql);
         $num = mysqli_num_rows($rst);
       
       ?>
-        <span class="r">共有数据：
+        <span class="r">共有种类：
           <strong>
             <?php echo $num;?>
           </strong> 个&nbsp&nbsp</span>
@@ -55,23 +59,16 @@
             <input type="checkbox" name="" value="">
           </th>
           <th width="30">ID</th>
-          <th width="80">用户名</th>
-          <th width="120">水族箱</th>
-          <th width="100">状态</th>
+          <th width="100">名称</th>
+          <th width="100">图片</th>
           <th width="100">操作</th>
         </tr>
       </thead>
 
       <?php
-         $sql1="select userdet.*,user.username uname,fish.name fname,fishtank.name ftname from userdet,user,fish,fishtank where user.id=userdet.user_id and fish.id=userdet.fish_id and fishtank.id=userdet.fishtank_id";
-    
+         $sql1="select * from fish";
+         
          $rst1=mysqli_query($conn,$sql1);
-        //  if($rst1){
-        //     echo 1;
-        //  }else{
-        //    echo 2;
-        //  }
-        //  exit;
         
          while ($row1=mysqli_fetch_assoc($rst1)) {
           echo '
@@ -81,25 +78,18 @@
                   <input type="checkbox" value="1" name="">
                 </td>';
           echo   "<td>{$row1['id']}</td>";
-          echo   "<td>{$row1['uname']}</td>";
-          echo   "<td>{$row1['ftname']}</td>";
-                  if($row1['status']){
-                    echo   "<td class='user-status'>";
-                    echo   " <span class='label label-success'>正式用户</span>";
-                    echo   "</td>";
-                  }else{
-                    echo   "<td class='user-status'>";
-                    echo   " <span class='label'>体验用户</span>";
-                    echo   "</td>";
-                  }         
-          echo    '<td class="f-14 user-manage">';
-          echo    "<a style='text-decoration:none' href='javascript:;' onclick=user_show('4','600','','用户详细','userdetial-show.php?id={$row1['id']}')>
+          echo   "<td>{$row1['name']}</td>";
+          echo   "<td class='user-status'>";
+          echo    " <span class='label label-success'><img src='../uploads/{$row1['img']}' width='35px'></span>";
+          echo     '</td>
+                <td class="f-14 user-manage">';
+          echo    "<a style='text-decoration:none' href='javascript:;' onclick=user_show('800','360','','鱼','fish-show.php?id={$row1['id']}')>
                     <i class='icon-eye-open'></i>
                   </a>";
-          echo    "<a title='修改' href='javascript:;' onClick=user_edit('4','550','','修改','userdetial-edit.php?id={$row1['id']}') class='ml-5' style='text-decoration:none'>
+          echo    "<a title='修改' href='javascript:;' onClick=user_edit('4','550','','修改','fish-edit.php?id={$row1['id']}') class='ml-5' style='text-decoration:none'>
                     <i class='icon-edit'></i>
                   </a>";
-          echo    "<a title='删除' href='userdetial-del.php?id={$row1['id']}' class='ml-5' style='text-decoration:none' id='a'>
+          echo    "<a title='删除' href='fish-del.php?id={$row1['id']}&img={$row1['img']}'  class='ml-5' style='text-decoration:none' id='a'>
                      <i class='icon-trash'></i>
                   </a>";
                   
@@ -125,4 +115,8 @@
   </script>
 </body>
 
-</html>
+</html> -->
+<?php
+echo "<h1><center>尽情期待</center><h1>"
+
+?>

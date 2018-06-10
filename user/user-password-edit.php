@@ -15,7 +15,7 @@
 
 <body>
   <div class="pd-10">
-    <form class="Huiform" id="loginform" action="" method="post">
+    <form class="" id="loginform" action="user-update-pass.php" method="post">
       <table class="table table-border table-bordered table-bg">
         <thead>
           <tr>
@@ -26,15 +26,15 @@
           <tr>
             <th class="text-r" width="30%">用户名：</th>
             <td>
-              <input name="oldpassword" id="oldpassword" class="input-text" type="test" autocomplete="off" tabindex="1"
-                datatype="*6-16" nullmsg="请输入旧密码！"  value="admin" disabled>
+              <input name="username" class="input-text" type="test" autocomplete="off" tabindex="1"
+                datatype="*6-16" value="admin" disabled>
             </td>
           </tr>
           <tr>
             <th class="text-r">新密码：</th>
             <td>
-              <input name="newpassword" id="newpassword" class="input-text" type="password" autocomplete="off" placeholder="设置密码"
-                tabindex="2" datatype="*6-16" nullmsg="请输入您的新密码！" >
+              <input name="password" id="password" class="input-text" type="password" autocomplete="off" placeholder="设置新密码"
+                tabindex="2" datatype="*6-16"  >
             </td>
           </tr>
           <tr>
@@ -49,13 +49,9 @@
     </form>
   </div>
   <script type="text/javascript" src="../js/jquery.min.js"></script>
-  <!-- <script type="text/javascript" src="../js/Validform_v5.3.2_min.js"></script> -->
-  <!-- <script type="text/javascript" src="../layer/layer.min.js"></script> -->
-  <!-- <script type="text/javascript" src="../js/H-ui.js"></script> -->
-  <!-- <script type="text/javascript" src="../js/H-ui.admin.js"></script> -->
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     $(".Huiform").Validform();
-  </script>
+  </script> -->
 
 </body>
 

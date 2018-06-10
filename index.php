@@ -84,12 +84,11 @@
 
         </dl>
         <dl id="menu-system">
-          <a href="login.html">
           <dt>
-            <!-- <a _href="login.html" href="javascript:void(0)"> -->
-              <i class="icon-cogs"></i> 退出系统
+            <a _href="comment/comment.php" href="javascript:void(0)">
+              <i class="icon-cogs"></i> 用户评论
               <b></b>
-            <!-- </a> -->
+            </a>
           </dt>
           </a>
         </dl>
