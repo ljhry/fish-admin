@@ -13,7 +13,9 @@ create table user(
 create table fish(
     id int unsigned not null auto_increment primary key,
     name varchar(100) not null,
-    img varchar(100) not null
+    img varchar(100) not null,
+    ph varchar(50) not null,
+    tem varchar(50) not null
 );
 create table fishtank(
     id int unsigned not null auto_increment primary key,

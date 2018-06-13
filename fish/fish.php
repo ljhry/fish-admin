@@ -60,6 +60,8 @@
           </th>
           <th width="30">ID</th>
           <th width="100">名称</th>
+          <th width="100">最适PH</th>
+          <th width="100">最适温度</th>
           <th width="100">图片</th>
           <th width="100">操作</th>
         </tr>
@@ -79,6 +81,8 @@
                 </td>';
           echo   "<td>{$row1['id']}</td>";
           echo   "<td>{$row1['name']}</td>";
+          echo   "<td>{$row1['ph']}</td>";
+          echo   "<td>{$row1['tem']}.°C</td>";
           echo   "<td class='user-status'>";
           echo    " <span class='label label-success'><img src='../uploads/{$row1['img']}' width='35px'></span>";
           echo     '</td>
