@@ -2,6 +2,8 @@
     include '../public/php/config.php';
 
     $fishname=$_POST['fishname'];
+    $fishph=$_POST['fishph'];
+    $fishtem=$_POST['fishtem'];
     $id=$_POST['id'];
     $imdsrc=$_POST['imgsrc'];
     $imgerror=$_FILES['img']['error'];
@@ -21,14 +23,14 @@
                 
             }            
             $img=basename($dst);
-            $sql1="update fish set name='{$fishname}',img='{$img}' where id={$id}";
+            $sql1="update fish set name='{$fishname}',img='{$img}',ph='{$fishph}',tem='{$fishtem}' where id={$id}";
             if(mysqli_query($conn,$sql1)){
             echo "修改成功-图片修改成功";
             }
         }
 
     }else{
-        $sql2="update fish set name='{$fishname}' where id={$id}";
+        $sql2="update fish set name='{$fishname}',ph='{$fishph}',tem='{$fishtem}' where id={$id}";
         if(mysqli_query($conn,$sql2)){
             echo "修改成功-无修改图片";
             

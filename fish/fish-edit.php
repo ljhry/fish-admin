@@ -76,6 +76,20 @@
                 <input type="text" style="width:200px" class="input-text" placeholder="名称" id="name" name="fishname" value="<?php echo $row['name']?>">
               </td>
             </tr>
+            <tr>
+              <th width="100" class="text-r">
+                <span class="c-red">*</span> PH：</th>
+              <td>
+                <input type="text" style="width:200px" class="input-text" placeholder="名称" id="name" name="fishph" value="<?php echo $row['ph']?>">
+              </td>
+            </tr>
+            <tr>
+              <th width="100" class="text-r">
+                <span class="c-red">*</span> 温度：</th>
+              <td>
+                <input type="text" style="width:200px" class="input-text" placeholder="名称" id="name" name="fishtem" value="<?php echo $row['tem'].°C?>">
+              </td>
+            </tr>
             <!--  -->
             <tr>
               <th width="100" class="text-r">

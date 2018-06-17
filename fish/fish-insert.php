@@ -4,6 +4,10 @@
         die("连接错误".mysqli_connect_error());
     }
     $fishname = $_POST['fishname'];
+    $fishph = $_POST['fishph'];
+    $fishtem = $_POST['fishtem'];
+    // echo $fishph."<br>".$fishtem."<br>".$fishname;
+    // exit;
     if(isset($fishname)&&$fishname!=""){
         if ($_FILES["file"]["error"] > 0){
             echo "错误：: " . $_FILES["file"]["error"] . "<br>";
@@ -17,7 +21,7 @@
             //图片缩放
             $img=basename($dst);
             
-            $sql="insert into fish(name,img) values('{$fishname}','{$img}')";
+            $sql="insert into fish(name,img,ph,tem) values('{$fishname}','{$img}','{$fishph}','{$fishtem}')";
         
             if(mysqli_query($conn,$sql)){
                 echo "<script>alert('添加成功')</script>";

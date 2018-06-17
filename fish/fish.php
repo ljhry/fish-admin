@@ -82,7 +82,7 @@
           echo   "<td>{$row1['id']}</td>";
           echo   "<td>{$row1['name']}</td>";
           echo   "<td>{$row1['ph']}</td>";
-          echo   "<td>{$row1['tem']}.°C</td>";
+          echo   "<td>{$row1['tem']}°C</td>";
           echo   "<td class='user-status'>";
           echo    " <span class='label label-success'><img src='../uploads/{$row1['img']}' width='35px'></span>";
           echo     '</td>
