@@ -87,7 +87,7 @@
           echo    " <span class='label label-success'><img src='../uploads/{$row1['img']}' width='35px'></span>";
           echo     '</td>
                 <td class="f-14 user-manage">';
-          echo    "<a style='text-decoration:none' href='javascript:;' onclick=user_show('800','360','','鱼','fish-show.php?id={$row1['id']}')>
+          echo    "<a style='text-decoration:none' href='javascript:;' onclick=user_show('800','360','','观赏水族','fish-show.php?id={$row1['id']}')>
                     <i class='icon-eye-open'></i>
                   </a>";
           echo    "<a title='修改' href='javascript:;' onClick=user_edit('4','550','','修改','fish-edit.php?id={$row1['id']}') class='ml-5' style='text-decoration:none'>

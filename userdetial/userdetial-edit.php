@@ -72,7 +72,7 @@
             </tr>
             <tr>
               <th width="100" class="text-r">
-                <span class="c-red">*</span> 观赏鱼：</th>
+                <span class="c-red">*</span> 观赏水族：</th>
               <td>
               <select name="fish_id" class="select l" required="required">
                     <?php               

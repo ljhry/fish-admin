@@ -44,7 +44,7 @@
       <thead>
         <tr class="text-c">
           <th width="120">水族箱</th>
-          <th width="120">观赏鱼</th>
+          <th width="120">观赏水族</th>
           <th width="80">种类</th>
           <th width="50">数量</th>
         </tr>
