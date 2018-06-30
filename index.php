@@ -119,7 +119,7 @@
       <div id="iframe_box" class="Hui-articlebox">
         <div class="show_iframe">
           <div style="display:none" class="loading"></div>
-          <iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe>
+          <iframe scrolling="yes" frameborder="0" src="welcome.php"></iframe>
         </div>
       </div>
     </section>

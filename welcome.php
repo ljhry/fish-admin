@@ -32,7 +32,20 @@
 <div class="pd-20" style="padding-top:20px;">
   <p class="f-20 text-success">欢迎使用云水族后台</p>
   <p>登录次数：18 </p>
-  <p>上次登录IP：222.35.131.79.1  上次登录时间：2018-06-20 11:19:55</p>
+ 
+  <p>上次登录IP： <?php $user_IP = ($_SERVER["HTTP_VIA"]) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"];
+                  $user_IP = ($user_IP) ? $user_IP : $_SERVER["REMOTE_ADDR"];echo $user_IP;?>  
+  </p>
+  <p>
+    <?php
+    if(!empty($_COOKIE['lastvisit'])){//先判断，是否存在cookie
+        echo "您上次访问时间是：".$_COOKIE['lastvisit'];
+        @setCookie("lastvisit",date("Y-m-d H:i:s",time()+3600*8),time()+3600*24*365);
+    }else{
+        echo "您是第一次登录，欢迎！";
+        @setCookie("lastvisit",date("Y-m-d H:i:s",time()+3600*8),time()+3600*24*365);
+    }?>
+  </p>
   <div class="myimg">
       <img src="images/logo透明.jpg" alt="" width="110px">
   </div>
