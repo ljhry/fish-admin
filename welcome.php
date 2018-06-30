@@ -40,10 +40,10 @@
     <?php
     if(!empty($_COOKIE['lastvisit'])){//先判断，是否存在cookie
         echo "您上次访问时间是：".$_COOKIE['lastvisit'];
-        @setCookie("lastvisit",date("Y-m-d H:i:s",time()+3600*8),time()+3600*24*365);
+        @setCookie("lastvisit",date("Y-m-d H:i:s",time()),time()+3600*24*365);
     }else{
         echo "您是第一次登录，欢迎！";
-        @setCookie("lastvisit",date("Y-m-d H:i:s",time()+3600*8),time()+3600*24*365);
+        @setCookie("lastvisit",date("Y-m-d H:i:s",time()),time()+3600*24*365);
     }?>
   </p>
   <div class="myimg">
