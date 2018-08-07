@@ -1,10 +1,9 @@
 <?php
-require_once('./db.php');
+// require_once('./db.php');
 require_once('./response.php');
-
 // 路由 action为url中的参数
-$action = $_POST['action'];
-$action = 'register';
+$action = $_GET['action'];
+// $action = 'register';
 switch($action) {
     case 'register':
         register();
@@ -13,44 +12,64 @@ switch($action) {
         login();
         break;
 }
-//检测数据库连接是否正常
-try{
-    $connect = Db::getInstance()->connect();
-}catch(Exception $e){
-    return Response::show(403,"数据库连接失败");
-}
 function register(){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $email = $_POST['email'];
-    $time = time();
-
-    if(!isset($username)||!isset($password)){
-        return Response::show(500,"用户名和密码为空");
+    $conn = mysqli_connect("localhost","root","12345678","myfishtank");
+    if(!$conn){
+        die("连接错误".mysqli_connect_error());
     }
-    if(!preg_match('/^[\w\x80-\xff]{3,15}$/', $username)){
-        return Response::show(501,"用户名不合法");
+    $username = $_GET['username'];
+    $password = $_GET['password'];
+    $email = $_GET['email'];
+    $time = time();
+    $data = array(
+        'username'=>$username,
+        'password'=>$password,
+        'userLevel'=>0
+    );
+    $username = htmlspecialchars($username);
+    $password = MD5($password);
+    if(!isset($username)||!isset($password)){
+        return Response::show(501,"用户名和密码为空");
     }
     if(strlen($password) < 6){
         return Response::show(502,"密码长度不能小于6位");
     }
-    if(!preg_match('/^w+([-+.]w+)*@w+([-.]w+)*.w+([-.]w+)*$/', $email)){
-        return Response::show(503,"邮箱格式不正确");
+   
+    $sql1 = "select *from user where username='$username' ";
+    $rst = mysqli_query($conn,$sql1);
+    $row = mysqli_fetch_assoc($rst);
+    if($username == $row['username']){
+        return Response::show(801,"用户名已经存在");
+         mysqli_free_result($rst);
+    }else{
+        $sql2 = "insert into user(username,password,isadmin,time) values('{$username}','{$password}',0,'{$time}')";
+        if(mysqli_query($conn,$sql2)){
+            return Response::show(800,"注册成功",$data);
+        }
     }
-    $password =MD5($password);
-    $sql = "insert into user(username,password,isadmin,time) values('{$username}','{$password}',0,'{$time}')";
-    if(mysqli_query($connect,$sql)){
-        return Response::show(200,"注册成功");
-    }
-
+    mysqli_close($conn);
 }
 function login(){
-    $username = htmlspecialchars($_POST['username']);
-    $password = MD5($_POST['password']);
-    $sql1 = "select *from user where username={$username} and password={$password}";
-    if(mysqli_query($connect,$sql1)){
-        return Response::show(201,"登陆成功");
-    }else{
-        return Response::show(202,"登陆失败");
+    $conn = mysqli_connect("localhost","root","12345678","myfishtank");
+    if(!$conn){
+        die("连接错误".mysqli_connect_error());
     }
+    $username = htmlspecialchars($_GET['username']);
+    $password = $_GET['password'];
+    $data = array(
+        'username'=>$username,
+        'password'=>$password,
+        'userLevel'=>0
+    );
+    $password = MD5($password);
+    $sql3 = "select *from user where username = '$username' and password = '$password' ";
+    $rst3 = mysqli_query($conn,$sql3);
+    $row3 = mysqli_fetch_assoc($rst3);
+    if($username==$row3['username']&&$password==$row3['password']){
+        return Response::show(900,"登陆成功",$data);
+        mysqli_free_result($rst3);
+    }else{
+        return Response::show(901,"登陆失败");
+    }
+    mysqli_close($conn);
 }
