@@ -2,7 +2,7 @@
 // require_once('./db.php');
 require_once('./response.php');
 // 路由 action为url中的参数
-$action = $_GET['action'];
+$action = $_POST['action'];
 // $action = 'register';
 switch($action) {
     case 'register':
@@ -17,9 +17,9 @@ function register(){
     if(!$conn){
         die("连接错误".mysqli_connect_error());
     }
-    $username = $_GET['username'];
-    $password = $_GET['password'];
-    $email = $_GET['email'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
     $time = time();
     $data = array(
         'username'=>$username,
@@ -54,8 +54,8 @@ function login(){
     if(!$conn){
         die("连接错误".mysqli_connect_error());
     }
-    $username = htmlspecialchars($_GET['username']);
-    $password = $_GET['password'];
+    $username = htmlspecialchars($_POST['username']);
+    $password = $_POST['password'];
     $data = array(
         'username'=>$username,
         'password'=>$password,
