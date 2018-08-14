@@ -71,23 +71,51 @@
           <tbody>
             <tr>
               <th width="100" class="text-r">
-                <span class="c-red">*</span> 名称：</th>
+                <span class="c-red">*</span> 名称 ：</th>
               <td>
                 <input type="text" style="width:200px" class="input-text" placeholder="名称" id="name" name="fishname" value="<?php echo $row['name']?>">
               </td>
             </tr>
             <tr>
               <th width="100" class="text-r">
-                <span class="c-red">*</span> PH：</th>
+                <span class="c-red">*</span> PH ：</th>
               <td>
-                <input type="text" style="width:200px" class="input-text" placeholder="名称" id="name" name="fishph" value="<?php echo $row['ph']?>">
+                <input type="text" style="width:200px" class="input-text" placeholder=" PH" id="name" name="fishph" value="<?php echo $row['ph']?>">
               </td>
             </tr>
             <tr>
               <th width="100" class="text-r">
-                <span class="c-red">*</span> 温度：</th>
+                <span class="c-red">*</span> 温度 ：</th>
               <td>
-                <input type="text" style="width:200px" class="input-text" placeholder="名称" id="name" name="fishtem" value="<?php echo $row['tem'].°C?>">
+                <input type="text" style="width:200px" class="input-text" placeholder="温度" id="name" name="fishtem" value="<?php echo $row['tem']?>">
+              </td>
+            </tr>
+            <tr>
+              <th width="100" class="text-r">
+                <span class="c-red">*</span> 喂食间隔 ：</th>
+              <td>
+                <input type="text" style="width:200px" class="input-text" placeholder="喂食间隔" id="name" name="fishfeed" value="<?php echo $row['feed']?>">
+              </td>
+            </tr>
+            <tr>
+              <th width="100" class="text-r">
+                <span class="c-red">*</span> 水过滤间隔 ：</th>
+              <td>
+                <input type="text" style="width:200px" class="input-text" placeholder=" 水过滤间隔 " id="name" name="fishe" value="<?php echo $row['wfilter']?>">
+              </td>
+            </tr>
+            <tr>
+              <th width="100" class="text-r">
+                <span class="c-red">*</span> 加氧间隔 ：</th>
+              <td>
+                <input type="text" style="width:200px" class="input-text" placeholder="加氧间隔" id="name" name="fisho" value="<?php echo $row['oxygen']?>">
+              </td>
+            </tr>
+            <tr>
+              <th width="100" class="text-r">
+                <span class="c-red">*</span> 换水间隔 ：</th>
+              <td>
+                <input type="text" style="width:200px" class="input-text" placeholder="换水间隔" id="name" name="fishw" value="<?php echo $row['wexchange']?>">
               </td>
             </tr>
             <!--  -->

@@ -34,6 +34,7 @@
       padding: 5px 5px;
       font-size: 14px;
     }
+
     ::-webkit-file-upload-button {
       padding: .4em;
       line-height: 20px;
@@ -44,12 +45,14 @@
       box-shadow: 3px 3px 5px #888;
       border-radius: 3px;
     }
+
     .myimg {
       box-shadow: 3px 3px 8px #888;
       width: 50px;
       position: relative;
       margin-top: 15px;
     }
+
     input,
     select,
     textarea {
@@ -62,51 +65,79 @@
 
 <body>
   <div class="pd-20"></div>
-    <div class="Huiform">
-      <form action="fish-insert.php" method="post" enctype="multipart/form-data">
-        <table class="table table-bg">
-          <tbody>
-            <tr>
-              <th width="100" class="text-r">
-                <span class="c-red">*</span> 名称：</th>
-              <td>
-                <input type="text" style="width:200px" class="input-text" placeholder="名称" id="user-name" name="fishname" >
-              </td>
-            </tr>
-            <tr>
-              <th width="100" class="text-r">
-                <span class="c-red">*</span> PH：</th>
-              <td>
-                <input type="text" style="width:200px" class="input-text" placeholder="最适PH" id="" name="fishph" >
-              </td>
-            </tr>
-            <tr>
-              <th width="100" class="text-r">
-                <span class="c-red">*</span> 温度：</th>
-              <td>
-                <input type="text" style="width:200px" class="input-text" placeholder="最适温度" id="" name="fishtem" >
-              </td>
-            </tr>
-            <tr>
-              <th width="100" class="text-r">
-                <span class="c-red">*</span> 图片：</th>
-              <td>
-                <input type="file" name="img" id="zx_img" value="上传图片">
-                <div class="myimg">
-                  <img id="img_preview" data-src="" data-holder-rendered="true" style="width: 50px; display: block;">
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th></th>
-              <td>
-                <button class="btn btn-success radius" type="submit">
-                  <i class="icon-ok"></i> 提交</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </form>
+  <div class="Huiform">
+    <form action="fish-insert.php" method="post" enctype="multipart/form-data">
+      <table class="table table-bg">
+        <tbody>
+          <tr>
+            <th width="100" class="text-r">
+              <span class="c-red">*</span> 名称 ：</th>
+            <td>
+              <input type="text" style="width:200px" class="input-text" placeholder="名称" id="user-name" name="fishname">
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r">
+              <span class="c-red">*</span> PH ：</th>
+            <td>
+              <input type="text" style="width:200px" class="input-text" placeholder="最适PH" id="" name="fishph">
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r">
+              <span class="c-red">*</span> 温度 ：</th>
+            <td>
+              <input type="text" style="width:200px" class="input-text" placeholder="最适温度" id="" name="fishtem">
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r">
+              <span class="c-red">*</span> 喂食间隔 ：</th>
+            <td>
+              <input type="text" style="width:200px" class="input-text" placeholder="喂食间隔" id="" name="fishfeed">
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r">
+              <span class="c-red">*</span> 水过滤间隔 ：</th>
+            <td>
+              <input type="text" style="width:200px" class="input-text" placeholder="水过滤间隔" id="" name="fishe">
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r">
+              <span class="c-red">*</span> 加氧间隔 ：</th>
+            <td>
+              <input type="text" style="width:200px" class="input-text" placeholder="加氧间隔" id="" name="fisho">
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r">
+              <span class="c-red">*</span> 换水间隔 ：</th>
+            <td>
+              <input type="text" style="width:200px" class="input-text" placeholder="换水间隔" id="" name="fishw">
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r">
+              <span class="c-red">*</span> 图片 ：</th>
+            <td>
+              <input type="file" name="img" id="zx_img" value="上传图片">
+              <div class="myimg">
+                <img id="img_preview" data-src="" data-holder-rendered="true" style="width: 50px; display: block;">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th></th>
+            <td>
+              <button class="btn btn-success radius" type="submit">
+                <i class="icon-ok"></i> 提交</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
   </div>
   <script type="text/javascript" src="../js/jquery.min.js"></script>
   <script type="text/javascript" src="../js/H-ui.js"></script>

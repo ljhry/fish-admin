@@ -15,7 +15,11 @@ create table fish(
     name varchar(100) not null,
     img varchar(100) not null,
     ph varchar(50) not null,
-    tem varchar(50) not null
+    tem varchar(50) not null,
+    feed varchar(50) not null,
+    wfilter varchar(50) not null,
+    oxygen varchar(50) not null,
+    wexchange varchar(50) not null,
 );
 create table fishtank(
     id int unsigned not null auto_increment primary key,
@@ -37,3 +41,7 @@ create table comment(
     content text,
     time int not null
 );
+ALTER TABLE `fish` ADD `feed` VARCHAR(50) NOT NULL AFTER `tem`;
+ALTER TABLE `fish` ADD `wfilter` VARCHAR(50) NOT NULL AFTER `feed`, ADD `oxygen` VARCHAR(50) NOT NULL AFTER `wfilter`, ADD `wexchange` VARCHAR(50) NOT NULL AFTER `oxygen`;
+ALTER TABLE `userdet` CHANGE `status` `status` TINYINT(4) NOT NULL DEFAULT '0';
+ALTER TABLE `userdet` CHANGE `fish_num` `fish_num` INT(11) NOT NULL DEFAULT '10';

@@ -10,7 +10,7 @@
   <link type="text/css" rel="stylesheet" href="../css/H-ui.css" />
   <link type="text/css" rel="stylesheet" href="../css/H-ui.admin.css" />
   <link type="text/css" rel="stylesheet" href="../font/font-awesome.min.css" />
-  <title>科目管理</title>
+  <title>观赏水族管理</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
     </div>
     <div class="cl pd-5 bg-1 bk-gray mt-20">
       <span class="l">
-        <a href="javascript:;" onClick="user_add('550','','添加鱼','fish-add.html')" class="btn btn-primary radius">
+        <a href="javascript:;" onClick="user_add('600','','添加鱼','fish-add.html')" class="btn btn-primary radius">
           <i class="icon-plus"></i> 添加品种</a>
       </span>
       <?php
@@ -87,10 +87,10 @@
           echo    " <span class='label label-success'><img src='../uploads/{$row1['img']}' width='35px'></span>";
           echo     '</td>
                 <td class="f-14 user-manage">';
-          echo    "<a style='text-decoration:none' href='javascript:;' onclick=user_show('800','360','','观赏水族','fish-show.php?id={$row1['id']}')>
+          echo    "<a style='text-decoration:none' href='javascript:;' onclick=user_show('1000','580','','观赏水族','fish-show.php?id={$row1['id']}')>
                     <i class='icon-eye-open'></i>
                   </a>";
-          echo    "<a title='修改' href='javascript:;' onClick=user_edit('4','550','','修改','fish-edit.php?id={$row1['id']}') class='ml-5' style='text-decoration:none'>
+          echo    "<a title='修改' href='javascript:;' onClick=user_edit('4','650','','修改','fish-edit.php?id={$row1['id']}') class='ml-5' style='text-decoration:none'>
                     <i class='icon-edit'></i>
                   </a>";
           echo    "<a title='删除' href='fish-del.php?id={$row1['id']}&img={$row1['img']}'  class='ml-5' style='text-decoration:none' id='a'>

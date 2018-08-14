@@ -13,8 +13,8 @@
 
 <title>用户查看</title>
 <style>
-body{ min-height:200px; font-size:14px;color: #888}
-td,th{ font-size:14px;}
+body{ min-height:200px; font-size:15px;color: #888}
+td,th{ font-size:15px; color:#222}
 img{
   box-shadow: 5px 5px 8px #888;
   width: 150px;
@@ -39,13 +39,28 @@ img{
   <table class="table">
     <tbody>
       <tr>
-        <th class="text-r">名称：</th>
-        <td><?php echo $row['name']?></td>
+        <th class="text-r">*图片 ：</th>
+        <td><?php echo "<img src='../uploads/{$row['img']}' width='150px'>"?></td>
       </tr>
-      
       <tr>
-        <th class="text-r">图片：</th>
-          <td><?php echo "<img src='../uploads/{$row['img']}' width='150px'>"?></td>
+        <th class="text-r">*学名 ：</th>
+        <td><?php echo $row['name']?></td> 
+      </tr>
+      <tr>
+        <th class="text-r">*喂食间隔 ：</th>
+        <td><?php echo $row['feed'].小时?></td>
+      </tr>
+      <tr>
+        <th class="text-r">*水过滤间隔 ：</th>
+        <td><?php echo $row['wfilter'].小时 ?></td>
+      </tr>
+      <tr>
+        <th class="text-r">*加氧间隔 ：</th>
+        <td><?php echo $row['oxygen'].小时?></td>
+      </tr>
+      <tr>
+        <th class="text-r">*换水间隔 ：</th>
+        <td><?php echo $row['wexchange'].小时?></td>
       </tr>
      
     </tbody>
