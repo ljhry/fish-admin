@@ -8,10 +8,10 @@
     $fishe = $_POST['fishe'];
     $fisho = $_POST['fisho'];
     $fishw = $_POST['fishw'];
+    $detail = $_POST['detail'];
     $id=$_POST['id'];
     $imdsrc=$_POST['imgsrc'];
     $imgerror=$_FILES['img']['error'];
-  
     if($imgerror==0){
         //图片上传
         $src=$_FILES['img']['tmp_name'];
@@ -27,14 +27,14 @@
                 
             }            
             $img=basename($dst);
-            $sql1="update fish set name='{$fishname}',img='{$img}',ph='{$fishph}',tem='{$fishtem}',feed='{$fishfeed}',wfilter='{$fishe}',oxygen='{$fisho}',wexchange='{$fishw}' where id={$id}";
+            $sql1="update fish set name='{$fishname}',img='{$img}',ph='{$fishph}',tem='{$fishtem}',feed='{$fishfeed}',wfilter='{$fishe}',oxygen='{$fisho}',wexchange='{$fishw}',detail='{$detail}' where id={$id}";
             if(mysqli_query($conn,$sql1)){
             echo "<center><h2>修改成功-图片修改成功</h2></center>";
             }
         }
 
     }else{
-        $sql2="update fish set name='{$fishname}',ph='{$fishph}',tem='{$fishtem}',feed='{$fishfeed}',wfilter='{$fishe}',oxygen='{$fisho}',wexchange='{$fishw}' where id={$id}";
+        $sql2="update fish set name='{$fishname}',ph='{$fishph}',tem='{$fishtem}',feed='{$fishfeed}',wfilter='{$fishe}',oxygen='{$fisho}',wexchange='{$fishw}',detail='{$detail}' where id={$id}";
         if(mysqli_query($conn,$sql2)){
             echo "<center><h2>修改成功-无修改图片</h2></center>";
             

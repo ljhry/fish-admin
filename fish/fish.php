@@ -60,9 +60,13 @@
           </th>
           <th width="30">ID</th>
           <th width="100">名称</th>
+          <th width="100">图片</th>
           <th width="100">最适PH</th>
           <th width="100">最适温度</th>
-          <th width="100">图片</th>
+          <th width="100">喂食间隔</th>
+          <th width="100">水过滤间隔</th>
+          <th width="100">加氧间隔</th>
+          <th width="100">换水间隔</th>
           <th width="100">操作</th>
         </tr>
       </thead>
@@ -80,14 +84,18 @@
                   <input type="checkbox" value="1" name="">
                 </td>';
           echo   "<td>{$row1['id']}</td>";
-          echo   "<td>{$row1['name']}</td>";
-          echo   "<td>{$row1['ph']}</td>";
-          echo   "<td>{$row1['tem']}°C</td>";
+          echo   "<td>{$row1['name']}</td>";       
           echo   "<td class='user-status'>";
           echo    " <span class='label label-success'><img src='../uploads/{$row1['img']}' width='35px'></span>";
-          echo     '</td>
-                <td class="f-14 user-manage">';
-          echo    "<a style='text-decoration:none' href='javascript:;' onclick=user_show('1000','580','','观赏水族','fish-show.php?id={$row1['id']}')>
+          echo     "</td>";
+          echo   "<td>{$row1['ph']}</td>";
+          echo   "<td>{$row1['tem']}°C</td>";
+          echo   "<td>{$row1['feed']}h</td>";
+          echo   "<td>{$row1['wfilter']}h</td>";
+          echo   "<td>{$row1['oxygen']}h</td>";
+          echo   "<td>{$row1['wexchange']}h</td>";
+          echo      "<td class='f-14 user-manage'>";
+          echo    "<a style='text-decoration:none' href='javascript:;' onclick=user_show('1000','630','','观赏水族','fish-show.php?id={$row1['id']}')>
                     <i class='icon-eye-open'></i>
                   </a>";
           echo    "<a title='修改' href='javascript:;' onClick=user_edit('4','650','','修改','fish-edit.php?id={$row1['id']}') class='ml-5' style='text-decoration:none'>

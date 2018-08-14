@@ -52,12 +52,16 @@
       position: relative;
       margin-top: 15px;
     }
-    input,
-    select,
-    textarea {
+    input,select{
       color: #555;
       background-color: #fff;
       border: solid 0px #ddd;
+    }
+    textarea{
+      width: 212px;
+      height: 150px;
+      border: 1px solid #b3b3b3;
+      resize: none;
     }
  
   </style>
@@ -116,6 +120,13 @@
                 <span class="c-red">*</span> 换水间隔 ：</th>
               <td>
                 <input type="text" style="width:200px" class="input-text" placeholder="换水间隔" id="name" name="fishw" value="<?php echo $row['wexchange']?>">
+              </td>
+            </tr>
+            <tr>
+              <th width="100" class="text-r">
+                <span class="c-red">*</span> 简单介绍 ：</th>
+              <td>
+                <textarea name="detail" id="" cols="30" rows="10"><?php echo $row['detail']?></textarea> 
               </td>
             </tr>
             <!--  -->

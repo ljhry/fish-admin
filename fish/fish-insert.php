@@ -10,6 +10,7 @@
     $fishe = $_POST['fishe'];
     $fisho = $_POST['fisho'];
     $fishw = $_POST['fishw'];
+    $detail = $_POST['detail'];
     // echo $fishph."<br>".$fishtem."<br>".$fishname;
     // exit;
     if(isset($fishname)&&$fishname!=""){
@@ -25,7 +26,7 @@
             //图片缩放
             $img=basename($dst);
             
-            $sql="insert into fish(name,img,ph,tem,feed,wfilter,oxygen,wexchange) values('{$fishname}','{$img}','{$fishph}','{$fishtem}','{$fishfeed}','{$fishe}','{$fisho}','{$fishw}')";
+            $sql="insert into fish(name,img,ph,tem,feed,wfilter,oxygen,wexchange,detail) values('{$fishname}','{$img}','{$fishph}','{$fishtem}','{$fishfeed}','{$fishe}','{$fisho}','{$fishw}','{$detail}')";
         
             if(mysqli_query($conn,$sql)){
                 echo "<script>alert('添加成功')</script>";

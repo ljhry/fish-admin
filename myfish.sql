@@ -20,6 +20,7 @@ create table fish(
     wfilter varchar(50) not null,
     oxygen varchar(50) not null,
     wexchange varchar(50) not null,
+    detail text
 );
 create table fishtank(
     id int unsigned not null auto_increment primary key,
@@ -45,3 +46,4 @@ ALTER TABLE `fish` ADD `feed` VARCHAR(50) NOT NULL AFTER `tem`;
 ALTER TABLE `fish` ADD `wfilter` VARCHAR(50) NOT NULL AFTER `feed`, ADD `oxygen` VARCHAR(50) NOT NULL AFTER `wfilter`, ADD `wexchange` VARCHAR(50) NOT NULL AFTER `oxygen`;
 ALTER TABLE `userdet` CHANGE `status` `status` TINYINT(4) NOT NULL DEFAULT '0';
 ALTER TABLE `userdet` CHANGE `fish_num` `fish_num` INT(11) NOT NULL DEFAULT '10';
+ALTER TABLE `fish` ADD `detail` TEXT NOT NULL AFTER `wexchange`;
