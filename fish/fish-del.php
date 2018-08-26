@@ -3,6 +3,8 @@
     if(!$conn){
     die("连接错误".mysqli_connect_error());
     }
+    mysqli_query($conn,"set names utf8");  
+
     $id=$_GET['id'];
     $img=$_GET['img'];
     $file="../uploads/{$img}";

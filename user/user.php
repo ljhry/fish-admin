@@ -27,6 +27,8 @@
   <?php
    ini_set('date.timezone','Asia/Shanghai');
    $conn = mysqli_connect("localhost","root","12345678","myfishtank");
+   mysqli_query($conn,"set names utf8");  
+
    $sql1 = "select count(*) from user group by id";
    
    $rst1 = mysqli_query($conn,$sql1);
@@ -63,6 +65,7 @@
       if(!$conn){
         die("连接错误".mysqli_connect_error());
       }
+      
       $sql="select * from user where isadmin=0";
       
       $rst=mysqli_query($conn,$sql);

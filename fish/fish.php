@@ -16,7 +16,7 @@
 <body>
   <nav class="Hui-breadcrumb">
     <i class="icon-home"></i> 首页
-    <span class="c-gray en">&gt;</span> 观赏水族管理
+    <span class="c-gray en">&gt;</span> 水族饲养解决方案
     <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
       title="刷新">
       <i class="icon-refresh"></i>
@@ -41,6 +41,7 @@
         if(!$conn){
           die("连接错误".mysqli_connect_error());
         }
+        mysqli_query($conn,"set names utf8");  
         $sql = "select count(*) from fish group by id";
         
         $rst = mysqli_query($conn,$sql);

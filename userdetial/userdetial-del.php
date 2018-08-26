@@ -1,5 +1,6 @@
 <?php
    include "../public/php/config.php";
+   mysqli_query($conn,"set names utf8");  
     $id=$_GET['id'];
 
     $sql="delete from userdet where id={$_GET['id']}";

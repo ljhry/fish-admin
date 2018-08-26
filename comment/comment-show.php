@@ -13,12 +13,42 @@
 
 <title>用户查看</title>
 <style>
-body{ min-height:200px; font-size:14px;color: #888}
-td,th{ font-size:14px;}
-img{
-  box-shadow: 5px 5px 8px #888;
-  width: 200px;
-}
+  body{
+    margin: 0;
+    padding: 0;
+    color: rgb(117, 117, 117);
+    }
+    .container{
+      width: 550px;
+      height: 500px;
+      margin: 20px auto;
+    }
+    ul{
+      width: 550px;
+    }
+    li{
+      width: 550px;
+    }
+    ul:nth-child(1)>li:nth-child(1){
+      font-size: 18px;
+    }
+    ul:nth-child(1)>li:nth-child(2){
+      font-size: 15px;
+      float: left;
+      clear: both;
+    }
+    ul:nth-child(1)>li:nth-child(3){
+      text-align: right;
+      right: 10%;
+    }
+    .myfont{
+      font-size: 12px;
+    }
+    hr{
+      width: 550px;
+      margin: 0 auto;
+      color: #888888;
+    }
 </style>
 </head>
 <body>
@@ -27,38 +57,42 @@ img{
    if(!$conn){
      die("连接错误".mysqli_connect_error());
    }
+
    mysqli_query($conn,"set names utf8");  
 
    $id=$_GET['id'];
-   $sql = "select *from fishtank where id={$id}";
+   $sql = "select *from comment where id={$id}";
    
    $rst = mysqli_query($conn,$sql);
    $row=mysqli_fetch_assoc($rst);
 ?>
-<div class="pd-20">
-<div class='myimg'>
-  
-  <table class="table">
-    <tbody>
-      <tr>
-        <th class="text-r">名称：</th>
-        <td><?php echo $row['name']?></td>
-      </tr>
-      
-      <tr>
-        <th class="text-r">图片：</th>
-          <td><?php echo "<img src='../uploads/{$row['img']}' width='200px'>"?></td>
-      </tr>
-     
-    </tbody>
-  </table>
-  </div>
+   <div class="container">
+     <ul>
+       <li>评论详情：</li>
+       <li>&nbsp&nbsp&nbsp&nbsp<?php echo $row['content']?></li>
+       <li><img src="../images/点赞.png" alt="" width="20px">
+        <ul>
+          <li class="myfont">200</li>
+        </ul>
+      </li>
+     </ul>
+     <hr>
+     <!-- <div>
+       <h4>追加评论：</h4>
+       <p></p>
+       <hr>
+       <p>挺好</p>
+       <hr>
+       <p>再优化一下，就更完美了</p>
+       <hr>
+       <p>感觉很有趣 哈哈哈</p>
+     </div> -->
+   </div>
   <?php
     mysqli_free_result($rst);
     
     mysqli_close($conn);
   ?>
-</div>
 <script type="text/javascript" src="../js/jquery.min.js"></script> 
 <script type="text/javascript" src="../js/H-ui.js"></script> 
 <script type="text/javascript" src="../js/H-ui.admin.js"></script> 

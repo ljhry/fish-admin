@@ -38,10 +38,9 @@
     include "../public/php/config.php";
     mysqli_query($conn,"set names utf8");  
 
-    $id=$_GET['id'];
-    $sql = "select *from userdet where id={$id}";
+    $sql = "select *from user where isadmin=0";
     $rst = mysqli_query($conn,$sql);
-    $row=mysqli_fetch_assoc($rst);
+    // $row=mysqli_fetch_assoc($rst);
 
     $sql1 = "select *from fishtank";
     $rst1 = mysqli_query($conn,$sql1);
@@ -52,9 +51,22 @@
 ?>
   <div class="pd-20"></div>
     <div class="Huiform">
-      <form action="userdetial-update.php" method="post" enctype="multipart/form-data">
+      <form action="userdetial-insert.php" method="post" enctype="multipart/form-data">
         <table class="table table-bg">
           <tbody>
+          <tr>
+              <th width="100" class="text-r">
+                <span class="c-red">*</span> 用户：</th>
+              <td>
+                <select name="user_id" class="select l" required="required">
+                    <?php               
+                        while($row=mysqli_fetch_assoc($rst)){
+                            echo "<option value='{$row['id']}'>{$row['username']}</option>";                                                        
+                        }                  
+                    ?>
+                </select>
+              </td>
+            </tr>
             <tr>
               <th width="100" class="text-r">
                 <span class="c-red">*</span> 水族箱：</th>
@@ -62,11 +74,7 @@
                 <select name="fishtank_id" class="select l" required="required">
                     <?php               
                         while($row1=mysqli_fetch_assoc($rst1)){
-                            if($row1['id']==$row['fishtank_id']){
-                                echo "<option value='{$row1['id']}' selected>{$row1['name']}</option>";                           
-                            }else{
-                                echo "<option value='{$row1['id']}'>{$row1['name']}</option>";                           
-                            }                       
+                            echo "<option value='{$row1['id']}'>{$row1['name']}</option>";                           
                         }                  
                     ?>
                 </select>
@@ -79,11 +87,7 @@
               <select name="fish_id" class="select l" required="required">
                     <?php               
                         while($row2=mysqli_fetch_assoc($rst2)){
-                            if($row2['id']==$row['fish_id']){
-                                echo "<option value='{$row2['id']}' selected>{$row2['name']}</option>";                           
-                            }else{
-                                echo "<option value='{$row2['id']}'>{$row2['name']}</option>";                           
-                            }
+                            echo "<option value='{$row2['id']}' selected>{$row2['name']}</option>";                           
                         }                       
                     ?>
                 </select>
@@ -93,26 +97,15 @@
               <th width="100" class="text-r">
                 <span class="c-red">*</span> 水族数量：</th>
               <td>
-                <input type="text" style="width:100px" class="input-text" placeholder="数量" id="" name="fish_num" value="<?php echo $row['fish_num']?>">     
+                <input type="text" style="width:100px" class="input-text" placeholder="数量" id="" name="fish_num">     
               </td>
             </tr>
             <tr>
               <th width="100" class="text-r">
                 <span class="c-red">*</span> 用户状态：</th>
               <td>
-              <?php
-                    if($row['status']){
-                ?>
-                        <label><input type="radio"  id="" name="status" value='1' checked>正式用户</label>
-                        <label><input type="radio" id=""  name="status" value='0'>体验用户</label>
-                <?php
-                    }else{
-                ?>
-                        <label><input type="radio"  id="" name="status" value='1'>正式用户</label>
-                        <label><input type="radio" id=""  name="status" value='0' checked>体验用户</label>
-                <?php
-                    }
-                ?>
+                    <label><input type="radio"  id="" name="status" value='1' checked>正式用户</label>
+                    <label><input type="radio" id=""  name="status" value='0'>体验用户</label>  
               </td>
             </tr>
             <tr>

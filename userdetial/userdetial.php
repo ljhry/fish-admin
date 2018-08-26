@@ -32,11 +32,17 @@
       </form>
     </div>
     <div class="cl pd-5 bg-1 bk-gray mt-20">
+    <span class="l">
+        <a href="javascript:;" onClick="user_add('550','','用户管理','userdetial-add.php')" class="btn btn-primary radius">
+          <i class="icon-plus"></i> 设置用户</a>
+    </span>
       <?php
         $conn = mysqli_connect("localhost","root","12345678","myfishtank");
         if(!$conn){
           die("连接错误".mysqli_connect_error());
         }
+        mysqli_query($conn,"set names utf8");  
+
         $sql = "select count(*) from userdet group by id";
         
         $rst = mysqli_query($conn,$sql);
@@ -93,7 +99,7 @@
                     echo   "</td>";
                   }         
           echo    '<td class="f-14 user-manage">';
-          echo    "<a style='text-decoration:none' href='javascript:;' onclick=user_show('4','600','','用户详细','userdetial-show.php?id={$row1['id']}')>
+          echo    "<a style='text-decoration:none' href='javascript:;' onclick=user_show('5','680','450','用户详细','userdetial-show.php?id={$row1['id']}')>
                     <i class='icon-eye-open'></i>
                   </a>";
           echo    "<a title='修改' href='javascript:;' onClick=user_edit('4','550','','修改','userdetial-edit.php?id={$row1['id']}') class='ml-5' style='text-decoration:none'>

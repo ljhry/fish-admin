@@ -1,5 +1,7 @@
 <?php
     include '../public/php/config.php';
+    mysqli_query($conn,"set names utf8");  
+
 
     $fishname=$_POST['fishname'];
     $fishph=$_POST['fishph'];

@@ -3,6 +3,8 @@
     if(!$conn){
         die("连接错误".mysqli_connect_error());
     }
+    mysqli_query($conn,"set names utf8");  
+
     $fishtankname = $_POST['fishtankname'];
     if(isset($fishtankname)&&$fishtankname!=""){
         if ($_FILES["file"]["error"] > 0){

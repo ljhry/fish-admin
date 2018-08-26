@@ -41,6 +41,8 @@
         if(!$conn){
           die("连接错误".mysqli_connect_error());
         }
+        mysqli_query($conn,"set names utf8");
+        
         $sql = "select count(*) from fishtank group by id";
         
         $rst = mysqli_query($conn,$sql);

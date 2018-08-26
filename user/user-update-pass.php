@@ -1,6 +1,8 @@
 <?php
     session_start();
     include "../public/php/config.php";
+    mysqli_query($conn,"set names utf8");  
+
     $password=md5($_POST['password']);
 
     $sql="update user set password='{$password}' where username='admin'";

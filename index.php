@@ -49,7 +49,7 @@
         <dl id="menu-comments">
           <dt>
             <a _href="fish/fish.php" href="javascript:;">
-              <i class="icon-rocket"></i> 观赏水族管理
+              <i class="icon-rocket"></i> 水族饲养解决方案
               <b></b>
             </a>
           </dt>
@@ -57,7 +57,7 @@
         <dl id="menu-article">
           <dt>
             <a _href="fishtank/fishtank.php" href="javascript:void(0)">
-              <i class="icon-backward"></i> 云水族箱管理
+              <i class="icon-backward"></i> 云水族箱列表
               <b></b>
             </a>
           </dt>
@@ -66,7 +66,7 @@
         <dl id="menu-picture">
           <dt>
             <a _href="userdetial/userdetial.php" href="javascript:void(0)">
-              <i class="icon-calendar"></i> 用户详情管理
+              <i class="icon-calendar"></i> 用户详情
               <b></b>
             </a>
           </dt>
@@ -86,7 +86,7 @@
         <dl id="menu-system">
           <dt>
             <a _href="comment/comment.php" href="javascript:void(0)">
-              <i class="icon-cogs"></i> 用户评论
+              <i class="icon-cogs"></i> 水族箱社区
               <b></b>
             </a>
           </dt>

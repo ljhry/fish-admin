@@ -47,3 +47,5 @@ ALTER TABLE `fish` ADD `wfilter` VARCHAR(50) NOT NULL AFTER `feed`, ADD `oxygen`
 ALTER TABLE `userdet` CHANGE `status` `status` TINYINT(4) NOT NULL DEFAULT '0';
 ALTER TABLE `userdet` CHANGE `fish_num` `fish_num` INT(11) NOT NULL DEFAULT '10';
 ALTER TABLE `fish` ADD `detail` TEXT NOT NULL AFTER `wexchange`;
+
+ALTER TABLE `comment` ADD `satisfaction` INT(50) NOT NULL AFTER `content`;
